@@ -561,6 +561,11 @@ section {
   }
 }
 
+/*--- SECTION - Support ---*/
+.support-number {
+  background-color: #F9A01B;
+}
+
 /*--- FOOTER ---*/
 .sec-footer__top {
   position: relative;
