@@ -470,34 +470,63 @@ section {
 /*--- SECTION - About ---*/
 .sec-about {
   display: flex;
-  align-items: center;
+  background-color: #EEEEEF;
 }
 
 .sec-about .about-img {
   width: 45%;
-  height: 100%;
 }
 
 .sec-about .about-img img {
   max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .sec-about .about-text {
-  padding: 100px 0;
-  padding-left: 100px;
-  padding-right: 50px;
+  padding: 100px;
   flex: 1%;
+  display: flex;
+  align-items: center;
 }
 
 .sec-about .about-text .btn-primary__ic {
   margin-top: 40px;
 }
 
-@media (max-width: 991px) {
+@media (min-width: 1441px) {
+  .sec-about .about-img {
+    max-height: 515px;
+  }
+}
+
+@media (max-width: 1199px) {
   .sec-about .about-text {
-    padding: 50px 30px;
+    padding: 100px 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  .sec-about {
+    display: block;
+  }
+  .sec-about .about-img {
+    width: 100%;
+  }
+  .sec-about .about-text {
+    padding: 50px 15px;
+    max-width: 720px;
+    margin: 0 auto;
   }
   .sec-about .about-text .btn-primary__ic {
     margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .sec-about .about-text {
+    max-width: 540px;
   }
 }
