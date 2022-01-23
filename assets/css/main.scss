@@ -49,7 +49,7 @@ $gray1: #EEEEEF;
 
 body {
     font-family: 'made_tommyregular';
-    font-size: 14px;
+    font-size: 15px;
     position: relative;
     color: #222222;
 }
@@ -81,12 +81,21 @@ li {
     margin: 0px;
 }
 .btn {
+    font-size: 14px;
+    font-family: 'made_tommyregular';
+    color: #333333;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    &.btn-filter {
+        filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.1));
+    }
     &.btn-primary__ic {
         background-color: #F2F2F2;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
-        filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.1));
         padding: 4px;
         display: flex;
         align-items: center;
@@ -174,7 +183,6 @@ header {
                         color: #333333;
                         width: 20px;
                         text-align: center;
-                        font-size: 15px;
                         &:hover {
                             color: $orange1;
                         }
@@ -223,7 +231,6 @@ header {
                     margin-right: 1.5rem;
                     a {
                         display: block;
-                        font-size: 15px;
                         color: #222222;
                         padding: 2px 8px;
                         position: relative;
@@ -358,7 +365,6 @@ section {
     }
     p {
         position: relative;
-        font-size: 15px;
         color: #666666;
         margin: 0px;
     }
@@ -418,7 +424,6 @@ section {
                 line-height: normal;
             }
             p {
-                font-size: 15px;
                 color: #666666;
                 margin-bottom: 0;
             }
@@ -529,8 +534,158 @@ section {
     }
 }
 /*--- SECTION - Support ---*/ 
-.support-number {
-    background-color: $orange3;
+.sec-support {
+    .sec-support__top {
+        position: relative;
+        .support-img-top {
+            position: relative;
+            display: block;
+            img {
+                display: inline-block;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                transition-delay: .1s;
+                transition-timing-function: ease-in-out;
+                transition-duration: .7s;
+                transition-property: all;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .sec-support__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $orange1;
+        padding: 70px 0;
+        .sec-title {
+            .breadcrumb-line,
+            h2,
+            p {
+                color: $white;
+            }
+            .breadcrumb-line::before {
+                background-color: rgba(255, 255, 255, .3);
+            }
+        }
+    }
+    .support-form {
+        max-width: 410px;
+        .sec-title {
+            margin-bottom: 50px;
+        }
+        .form-control {
+            font-size: 15px;
+            font-family: 'made_tommyregular';
+            color: $white;
+            background-color: transparent;
+            padding: 12px 0;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .5);
+            margin-bottom: 30px;
+            &:focus,
+            &:focus-within {
+                outline: none;
+                box-shadow: none;
+                border-bottom: 1px solid $white;
+            }
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $white;
+            opacity: 1; /* Firefox */
+            }
+            
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $white;
+            }
+            
+            &::-ms-input-placeholder { /* Microsoft Edge */
+            color: $white;
+            }
+        }
+        textarea.form-control {
+            background-color: rgba(255, 255, 255, .1);
+            padding: 12px 24px;
+            min-height: 170px;
+            resize: none;
+        }
+    }
+    .support-number {
+        background-color: $orange3;
+        padding: 60px 0;
+        display: flex;
+        align-items: center;
+        svg {
+            font-size: 50px;
+            color: $white;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 45px;
+            font-family: 'made_tommybold';
+            color: $white;
+            margin-bottom: 0px;
+        }
+        a {
+            color: $white;
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .sec-support {
+        .sec-support__bottom {
+            justify-content: end;
+            .support-form {
+                margin-right: 100px;
+            }
+        }
+    }
+}
+@media (min-width: 992px) {
+    .sec-support {
+        .sec-support__top,
+        .sec-support__bottom {
+            flex: 1%;
+        }
+        .sec-support__top {
+            .support-img-top {
+                height: 65%;
+            }
+            .support-number {
+                height: 35%;
+                padding: 60px;
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .sec-support .sec-support__top {
+        display: flex;
+        .support-img-top,
+        .support-number {
+            flex: 1%;
+            justify-content: center;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .sec-support {
+        .sec-support__bottom {
+            padding: 50px 0;
+        }
+        .support-number {
+            padding: 50px 0;
+            justify-content: center;
+            h2 {
+                font-size: 35px;
+            }
+        }
+        .support-form {
+            padding: 0 15px;
+        }
+    }
 }
 /*--- FOOTER ---*/ 
 .sec-footer__top {
@@ -579,13 +734,11 @@ footer {
         p {
             margin-bottom: 10px;
             color: #555555;
-            font-size: 15px;
         }
         ul {
             li {
                 margin-top: 10px;
                 color: #555555;
-                font-size: 15px;
                 &:first-child {
                     margin-top: 0;
                 }
@@ -650,7 +803,6 @@ footer {
             display: block;
             text-align: center;
             font-family: 'Arimo', sans-serif;
-            font-size: 15px;
         }
     }
 }
@@ -672,6 +824,6 @@ footer {
         font-size: 30px;
     }
     footer::before {
-        width: 400px;
+        display: none;
     }
 }
