@@ -195,6 +195,9 @@ header {
     .header-upper {
         padding: 24px 0;
         background-color: $gray1;
+        .header-logo {
+            display: block;
+        }
     }
     .menu-area {
         display: flex;
@@ -321,6 +324,18 @@ header {
             .top-right .social-links {
                 justify-content: center;
             }
+        }
+    }
+}
+@media (max-width: 575px) {
+    header {
+        .header-upper .header-logo {
+            text-align: center;
+        }
+        .menu-area {
+            padding-top: 24px;
+            float: none;
+            width: 100%;
         }
     }
 }
@@ -1112,12 +1127,15 @@ section {
     }
 }
 /*--- SECTION - CAREER Page ---*/ 
-.career-item {
+.inner-box__item {
     margin-top: 20px;
     padding: 50px;
     background-color: #FAFAFA;
+    .btn {
+        margin-top: 30px;
+    }
 }
-.career-date {
+.date-item {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
@@ -1130,13 +1148,18 @@ section {
         font-size: 14px;
     }
 }
-.career-desc {
-    margin-bottom: 30px;
+.inner-box__desc {
     h1 {
         font-size: 30px;
         margin-bottom: 10px;
-        line-height: 60px;
+        line-height: 1.5em;
         font-family: 'made_tommymedium';
+        a {
+            color: #222222;
+            &:hover {
+                color: $orange1;
+            }
+        }
     }
     p {
         color: #666666;
@@ -1144,8 +1167,8 @@ section {
         margin-bottom: 0;
     }
 }
-.sidebar-career {
-    &__item {
+.sidebar {
+    &__inner {
         margin-bottom: 50px;
     }
     .search-sidebar {
@@ -1182,7 +1205,7 @@ section {
             }
         }
     }
-    .sidebar-career__list {
+    .sidebar__list {
         margin-bottom: 20px;
         li {
             display: flex;
@@ -1213,7 +1236,105 @@ section {
     }
 }
 @media (max-width: 991px) {
-    .career-item {
+    .inner-box__item {
         padding: 25px;
+        .date-item {
+            margin-bottom: 8px;
+        }
+        .inner-box__desc h1 {
+            font-size: 26px;
+            line-height: normal;
+        }
+    }
+    .sidebar {
+        margin-top: 40px;
+    }
+}
+/*--- SECTION - NEWS and EVENT Page ---*/ 
+.col-padding-right {
+    padding-right: 50px;
+}
+.sec-news {
+    .img-block {
+        position: relative;
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+    .list-inner-box__news {
+        li {
+            margin-top: 20px;
+        }
+        .inner-box__item {
+            margin-top: 0;
+        }
+    }
+    .news-detail {
+        .detail-content {
+            border: 1px solid #DEDEDE;
+            border-top: none;
+            padding: 25px 50px;
+            .date-item {
+                border-bottom: 1px solid #DEDEDE;
+                padding-bottom: 16px;
+                margin-bottom: 26px;
+            }
+            h1 {
+                font-size: 45px;
+                font-family: 'made_tommybold';
+                margin-bottom: 15px;
+            }
+            p {
+                margin-bottom: 25px;
+                line-height: 1.5em;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            > span {
+                font-family: 'made_tommybold';
+                display: block;
+                margin-bottom: 10px;
+            }
+            ul {
+                padding-left: 20px;
+                margin-bottom: 25px;
+                li {
+                    list-style-type: disc;
+                }
+            }
+        }
+    }
+}
+.btn-share {
+    color: #000000;
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+    svg {
+        color: $orange1;
+        margin-right: 8px;
+    }
+    &:hover {
+        color: $orange1;
+    }
+}
+@media (max-width: 991px) {
+    .col-padding-right {
+        padding-right: calc(var(--bs-gutter-x) * .5);
+    }
+    .sec-news {
+        .news-detail {
+            .detail-content {
+                padding: 25px;
+                h1 {
+                    font-size: 30px;
+                }
+                .date-item {
+                    margin-bottom: 20px;
+                }
+            }
+        }
     }
 }

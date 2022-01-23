@@ -210,6 +210,10 @@ header .header-upper {
   background-color: #EEEEEF;
 }
 
+header .header-upper .header-logo {
+  display: block;
+}
+
 header .menu-area {
   display: flex;
   justify-content: flex-end;
@@ -343,6 +347,17 @@ header .menu-area .menu-right .search-toggler {
   header .header-top .top-left,
   header .header-top .top-right .social-links {
     justify-content: center;
+  }
+}
+
+@media (max-width: 575px) {
+  header .header-upper .header-logo {
+    text-align: center;
+  }
+  header .menu-area {
+    padding-top: 24px;
+    float: none;
+    width: 100%;
   }
 }
 
@@ -1210,59 +1225,67 @@ section.section-page {
 }
 
 /*--- SECTION - CAREER Page ---*/
-.career-item {
+.inner-box__item {
   margin-top: 20px;
   padding: 50px;
   background-color: #FAFAFA;
 }
 
-.career-date {
+.inner-box__item .btn {
+  margin-top: 30px;
+}
+
+.date-item {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
 
-.career-date svg {
+.date-item svg {
   color: #F15D2A;
   margin-right: 10px;
 }
 
-.career-date span {
+.date-item span {
   color: #777777;
   font-size: 14px;
 }
 
-.career-desc {
-  margin-bottom: 30px;
-}
-
-.career-desc h1 {
+.inner-box__desc h1 {
   font-size: 30px;
   margin-bottom: 10px;
-  line-height: 60px;
+  line-height: 1.5em;
   font-family: 'made_tommymedium';
 }
 
-.career-desc p {
+.inner-box__desc h1 a {
+  color: #222222;
+}
+
+.inner-box__desc h1 a:hover {
+  color: #F15D2A;
+}
+
+.inner-box__desc p {
   color: #666666;
   line-height: 1.5em;
   margin-bottom: 0;
 }
 
-.sidebar-career__item {
+.sidebar__inner {
   margin-bottom: 50px;
 }
 
-.sidebar-career .search-sidebar .form-group {
+.sidebar .search-sidebar .form-group {
   position: relative;
   margin-bottom: 40px;
 }
 
-.sidebar-career .search-sidebar .form-group:first-child {
+.sidebar .search-sidebar .form-group:first-child {
   margin-top: 0;
 }
 
-.sidebar-career .search-sidebar .form-group > svg {
+.sidebar .search-sidebar .form-group > svg {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1273,7 +1296,7 @@ section.section-page {
   z-index: 1;
 }
 
-.sidebar-career .search-sidebar .form-group input {
+.sidebar .search-sidebar .form-group input {
   position: relative;
   width: 100%;
   height: 45px;
@@ -1284,50 +1307,155 @@ section.section-page {
   transition: all 500ms ease;
 }
 
-.sidebar-career .search-sidebar .form-group input:focus {
+.sidebar .search-sidebar .form-group input:focus {
   border-color: #F15D2A !important;
   box-shadow: none;
   outline: none;
 }
 
-.sidebar-career .sidebar-career__list {
+.sidebar .sidebar__list {
   margin-bottom: 20px;
 }
 
-.sidebar-career .sidebar-career__list li {
+.sidebar .sidebar__list li {
   display: flex;
   padding: 25px 0;
   border-bottom: 1px solid #DEDEDE;
 }
 
-.sidebar-career .sidebar-career__list li .img-left {
+.sidebar .sidebar__list li .img-left {
   width: 80px;
   height: 80px;
   margin-right: 20px;
 }
 
-.sidebar-career .sidebar-career__list li .img-left img {
+.sidebar .sidebar__list li .img-left img {
   object-fit: cover;
   object-position: center;
   width: 100%;
 }
 
-.sidebar-career .sidebar-career__list li .desc-right {
+.sidebar .sidebar__list li .desc-right {
   flex: 1%;
 }
 
-.sidebar-career .sidebar-career__list li .desc-right h5 {
+.sidebar .sidebar__list li .desc-right h5 {
   font-size: 17px;
   font-family: 'made_tommymedium';
   margin-bottom: 8px;
 }
 
-.sidebar-career .sidebar-career__list li .desc-right h5 a {
+.sidebar .sidebar__list li .desc-right h5 a {
   color: #222222;
 }
 
 @media (max-width: 991px) {
-  .career-item {
+  .inner-box__item {
     padding: 25px;
+  }
+  .inner-box__item .date-item {
+    margin-bottom: 8px;
+  }
+  .inner-box__item .inner-box__desc h1 {
+    font-size: 26px;
+    line-height: normal;
+  }
+  .sidebar {
+    margin-top: 40px;
+  }
+}
+
+/*--- SECTION - NEWS and EVENT Page ---*/
+.col-padding-right {
+  padding-right: 50px;
+}
+
+.sec-news .img-block {
+  position: relative;
+  display: block;
+}
+
+.sec-news .img-block img {
+  width: 100%;
+}
+
+.sec-news .list-inner-box__news li {
+  margin-top: 20px;
+}
+
+.sec-news .list-inner-box__news .inner-box__item {
+  margin-top: 0;
+}
+
+.sec-news .news-detail .detail-content {
+  border: 1px solid #DEDEDE;
+  border-top: none;
+  padding: 25px 50px;
+}
+
+.sec-news .news-detail .detail-content .date-item {
+  border-bottom: 1px solid #DEDEDE;
+  padding-bottom: 16px;
+  margin-bottom: 26px;
+}
+
+.sec-news .news-detail .detail-content h1 {
+  font-size: 45px;
+  font-family: 'made_tommybold';
+  margin-bottom: 15px;
+}
+
+.sec-news .news-detail .detail-content p {
+  margin-bottom: 25px;
+  line-height: 1.5em;
+}
+
+.sec-news .news-detail .detail-content p:last-child {
+  margin-bottom: 0;
+}
+
+.sec-news .news-detail .detail-content > span {
+  font-family: 'made_tommybold';
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sec-news .news-detail .detail-content ul {
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.sec-news .news-detail .detail-content ul li {
+  list-style-type: disc;
+}
+
+.btn-share {
+  color: #000000;
+  display: inline-block;
+  margin-top: 20px;
+  float: right;
+}
+
+.btn-share svg {
+  color: #F15D2A;
+  margin-right: 8px;
+}
+
+.btn-share:hover {
+  color: #F15D2A;
+}
+
+@media (max-width: 991px) {
+  .col-padding-right {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+  }
+  .sec-news .news-detail .detail-content {
+    padding: 25px;
+  }
+  .sec-news .news-detail .detail-content h1 {
+    font-size: 30px;
+  }
+  .sec-news .news-detail .detail-content .date-item {
+    margin-bottom: 20px;
   }
 }
