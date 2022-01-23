@@ -338,7 +338,8 @@ section {
     text-transform: uppercase;
     font-weight: 400;
     margin-bottom: 10px;
-    &::before {
+    &::before,
+    &.center::after {
         position: absolute;
         content: '';
         width: 45px;
@@ -351,6 +352,26 @@ section {
         padding-right: 55px;
         &::before {
             right: 0;
+            background-color: $orange1;
+        }
+    }
+    &.left {
+        padding-left: 55px;
+        &::before {
+            left: 0;
+            background-color: $orange1;
+        }
+    }
+    &.center {
+        padding: 0 55px;
+        margin: 0 auto 10px auto;
+        display: table;
+        &::before {
+            right: 0;
+            background-color: $orange1;
+        }
+        &::after {
+            left: 0;
             background-color: $orange1;
         }
     }
@@ -902,10 +923,21 @@ section {
         font-family: 'made_tommymedium';
         margin-bottom: 25px;
     }
+    h5 {
+        font-family: 'made_tommymedium';
+        color: #333333;
+        font-size: 15px;
+        margin-bottom: 8px;
+        line-height: normal;
+    }
     p {
         color: #777777;
         line-height: 1.5em;
         margin-bottom: 20px;
+        span {
+            color: #333333;
+            display: block;
+        }
     }
 }
 .product-list {
@@ -931,9 +963,10 @@ section {
         }
     }
     .product__img {
-        width: 100.6%;
+        width: 100.5%;
         height: 193px;
         margin: -1px;
+        display: block;
         img {
             object-fit: cover;
             object-position: center;
@@ -943,6 +976,7 @@ section {
     }
     .product__title {
         padding: 30px 20px;
+        background-color: $white;
         text-align: center;
         h3 {
             font-family: 'made_tommymedium';
@@ -1043,5 +1077,143 @@ section {
                 }
             }
         }
+    }
+}
+.sec-product-detail {
+    .product-image {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .product-detail {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+/*--- SECTION - Related Product ---*/ 
+.sec-related {
+    background-color: $gray1;
+    padding: 100px 0;
+    .product-list {
+        margin-top: 20px;
+        li {
+            width: 25%;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .sec-related {
+        padding: 50px 0;
+    }
+}
+/*--- SECTION - CAREER Page ---*/ 
+.career-item {
+    margin-top: 20px;
+    padding: 50px;
+    background-color: #FAFAFA;
+}
+.career-date {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    svg {
+        color: $orange1;
+        margin-right: 10px;
+    }
+    span {
+        color: #777777;
+        font-size: 14px;
+    }
+}
+.career-desc {
+    margin-bottom: 30px;
+    h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+        line-height: 60px;
+        font-family: 'made_tommymedium';
+    }
+    p {
+        color: #666666;
+        line-height: 1.5em;
+        margin-bottom: 0;
+    }
+}
+.sidebar-career {
+    &__item {
+        margin-bottom: 50px;
+    }
+    .search-sidebar {
+        .form-group {
+            position: relative;
+            margin-bottom: 40px;
+            &:first-child {
+                margin-top: 0;
+            }
+            > svg {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                right: 20px;
+                font-size: 16px;
+                color: #333333;
+                z-index: 1;
+            }
+            input {
+                position: relative;
+                width: 100%;
+                height: 45px;
+                font-size: 14px;
+                color: #333333;
+                border: 1px solid #DEDEDE;
+                padding: 10px 50px 10px 20px;
+                transition: all 500ms ease;
+                &:focus {
+                    border-color: $orange1 !important;
+                    box-shadow: none;
+                    outline: none;
+                }
+            }
+        }
+    }
+    .sidebar-career__list {
+        margin-bottom: 20px;
+        li {
+            display: flex;
+            padding: 25px 0;
+            border-bottom: 1px solid #DEDEDE;
+            .img-left {
+                width: 80px;
+                height: 80px;
+                margin-right: 20px;
+                img {
+                    object-fit: cover;
+                    object-position: center;
+                    width: 100%;
+                }
+            }
+            .desc-right {
+                flex: 1%;
+                h5 {
+                    font-size: 17px;
+                    font-family: 'made_tommymedium';
+                    margin-bottom: 8px;
+                    a {
+                        color: #222222;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .career-item {
+        padding: 25px;
     }
 }
