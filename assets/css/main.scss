@@ -313,6 +313,9 @@ header {
     }
 }
 @media (max-width: 767px) {
+    .btn.btn-primary__ic {
+        width: 220px;
+    }
     header {
         .header-top {
             &::before {
@@ -1122,8 +1125,28 @@ section {
     }
 }
 @media (max-width: 991px) {
+    .sec-product-detail {
+        .product-image {
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+    }
     .sec-related {
         padding: 50px 0;
+        .product-list {
+            li {
+                width: 50%;
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .sec-related {
+        .product-list {
+            li {
+                width: 100%;
+            }
+        }
     }
 }
 /*--- SECTION - CAREER Page ---*/ 
@@ -1235,6 +1258,94 @@ section {
         }
     }
 }
+.sidebar-career {
+    padding: 50px;
+    border: 1px solid #DEDEDE;
+    h3 {
+        font-size: 30px;
+        font-family: 'made_tommybold';
+        color: #000000;
+        margin-bottom: 10px;
+    }
+    p {
+        color: #777777;
+        margin-bottom: 0;
+    }
+    .form-career {
+        margin-top: 50px;
+        .form-group {
+            margin-bottom: 40px;
+        }
+        .form-control {
+            font-size: 15px;
+            font-family: 'made_tommyregular';
+            color: #777777;
+            background-color: transparent;
+            padding: 12px 0;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid #DEDEDE;
+            &:focus,
+            &:focus-within {
+                outline: none;
+                box-shadow: none;
+                border-bottom: 1px solid $orange1;
+            }
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #777777;
+            opacity: 1; /* Firefox */
+            }
+            
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #777777;
+            }
+            
+            &::-ms-input-placeholder { /* Microsoft Edge */
+            color: #777777;
+            }
+        }
+        textarea.form-control {
+            background-color: #FAFAFA;
+            padding: 12px 24px;
+            min-height: 100px;
+            resize: none;
+        }
+        .custom-file {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            padding: 24px;
+            text-align: center;
+            width: 100%;
+            background-color: #F4F4F4;
+            margin-bottom: 20px;
+            input {
+                width: 100%;
+                margin: 0;
+                filter: alpha(opacity=0);
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                cursor: pointer;
+            }
+            .custom-file-label {
+                font-size: 15px;
+                font-family: 'made_tommyregular';
+                color: #777777;
+                svg {
+                    font-size: 60px;
+                    display: block;
+                    margin: 0 auto;
+                    margin-bottom: 1rem;
+                    color: #000000;
+                }
+            }
+        }
+    }
+}
 @media (max-width: 991px) {
     .inner-box__item {
         padding: 25px;
@@ -1246,8 +1357,32 @@ section {
             line-height: normal;
         }
     }
-    .sidebar {
+    .sidebar,
+    .sidebar-career {
         margin-top: 40px;
+    }
+    .sidebar-career {
+        padding: 25px;
+        .form-career {
+            margin-top: 30px;
+            .form-group {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .sidebar-career {
+        .form-career {
+            .custom-file {
+                padding: 1rem;
+                .custom-file-label {
+                    svg {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
     }
 }
 /*--- SECTION - NEWS and EVENT Page ---*/ 
@@ -1270,11 +1405,12 @@ section {
             margin-top: 0;
         }
     }
-    .news-detail {
+    .detail-wrapper {
+        height: 100%;
         .detail-content {
             border: 1px solid #DEDEDE;
-            border-top: none;
             padding: 25px 50px;
+            height: 100%;
             .date-item {
                 border-bottom: 1px solid #DEDEDE;
                 padding-bottom: 16px;
@@ -1305,6 +1441,13 @@ section {
                 }
             }
         }
+        &.detail-wrapper__news {
+            height: auto;
+            .detail-content {
+                border-top: none;
+                height: auto;
+            }
+        }
     }
 }
 .btn-share {
@@ -1325,7 +1468,7 @@ section {
         padding-right: calc(var(--bs-gutter-x) * .5);
     }
     .sec-news {
-        .news-detail {
+        .detail-wrapper {
             .detail-content {
                 padding: 25px;
                 h1 {
