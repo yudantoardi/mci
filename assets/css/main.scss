@@ -95,7 +95,10 @@ li {
     font-size: 14px;
     font-family: 'made_tommyregular';
     color: #333333;
-
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     &:focus {
         outline: none;
         box-shadow: none;
@@ -107,6 +110,7 @@ li {
 
     &.btn-primary__ic {
         background-color: #F2F2F2;
+        border: 1px solid transparent;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
@@ -133,6 +137,18 @@ li {
             justify-content: center;
             background-color: $orange2;
             color: $white;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+        &:hover {
+            color: $white;
+            background-color: $orange2;
+            .btn-icon {
+                background-color: $gray1;
+                color: $orange2;
+            }
         }
     }
 }
@@ -468,6 +484,7 @@ section {
         font-size: 40px;
         font-family: 'made_tommymedium';
         margin-bottom: 15px;
+        line-height: normal;
     }
 
     p {
@@ -701,7 +718,6 @@ section {
         padding: 70px 0;
 
         .sec-title {
-
             .breadcrumb-line,
             h2,
             p {
@@ -710,6 +726,15 @@ section {
 
             .breadcrumb-line::before {
                 background-color: rgba(255, 255, 255, .3);
+            }
+        }
+
+        .btn.btn-primary__ic:hover {
+            background-color: #F2F2F2;
+            color: $orange2;
+            .btn-icon {
+                color: $orange2;
+                background-color: $white;
             }
         }
     }
@@ -1824,6 +1849,7 @@ section {
 .sec-world-cyber {
     position: relative;
     padding: 100px 0;
+
     .pattern-layer {
         position: absolute;
         left: 0px;
@@ -1834,8 +1860,10 @@ section {
         background-repeat: no-repeat;
         background-position: center;
     }
+
     .office-wrapper {
         position: relative;
+
         .office-bg-img {
             position: absolute;
             top: 0;
@@ -1844,9 +1872,11 @@ section {
             bottom: 0;
         }
     }
+
     .office-location {
         position: relative;
         display: block;
+
         .location-area {
             position: relative;
             display: block;
@@ -1855,6 +1885,7 @@ section {
             height: 100%;
             margin: 0 auto;
             min-height: 603px;
+
             .icon-box {
                 position: absolute;
                 left: 16px;
@@ -1863,15 +1894,18 @@ section {
                 margin: auto;
                 display: flex;
                 align-items: center;
+
                 img {
                     max-width: 25px;
                 }
             }
+
             p {
                 font-size: 14px;
                 color: #777777;
                 margin: 0px;
             }
+
             .location-box {
                 position: absolute;
                 left: 200px;
@@ -1881,39 +1915,47 @@ section {
                 background: $white;
                 cursor: pointer;
                 transition: all 500ms ease;
+
                 &:nth-child(2) {
                     left: 295px;
                     top: 255px;
                 }
+
                 &:nth-child(3) {
                     left: 390px;
                     top: 415px;
                 }
+
                 &:nth-child(4) {
                     left: 60%;
                     top: 175px;
                     margin-left: -25px;
                 }
+
                 &:nth-child(5) {
                     left: 55%;
                     top: 390px;
                     margin-left: -20px;
                 }
+
                 &:nth-child(6) {
                     top: 150px;
                     left: auto;
                     right: 225px;
                 }
+
                 &:nth-child(7) {
                     top: 250px;
                     left: auto;
                     right: 300px;
                 }
+
                 &:last-child {
                     top: 450px;
                     left: auto;
                     right: 195px;
                 }
+
                 &::before {
                     position: absolute;
                     content: '';
@@ -1924,6 +1966,7 @@ section {
                     background-color: $orange1;
                     transition: all 500ms ease;
                 }
+
                 .address-box {
                     position: absolute;
                     left: -109px;
@@ -1937,6 +1980,7 @@ section {
                     z-index: 1;
                     transition: all 500ms ease;
                     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+
                     &::before {
                         position: absolute;
                         content: '';
@@ -1948,8 +1992,9 @@ section {
                         transform: rotate(45deg);
                         bottom: -6px;
                         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
-                    }                    
+                    }
                 }
+
                 &:hover .address-box {
                     transform: translateY(0px);
                     opacity: 1;
@@ -1959,28 +2004,180 @@ section {
         }
     }
 }
+
 @media (max-width: 1199px) {
     .sec-world-cyber .office-location .location-area {
         .location-box {
             left: 100px;
+
             &:nth-child(2) {
                 left: 180px;
             }
+
             &:nth-child(3) {
                 left: 280px;
             }
+
             &:nth-child(4) {
                 left: 62%;
             }
+
             &:nth-child(6) {
                 right: 125px;
             }
+
             &:nth-child(7) {
                 right: 200px;
             }
+
             &:last-child {
                 right: 105px;
             }
+        }
+    }
+}
+
+/*--- SECTION - Banner Top Carousel ---*/
+.banner-carousel {
+    position: relative;
+    .slide-item {
+        position: relative;
+        overflow: hidden;
+        height: 550px;
+        display: flex;
+        align-items: center;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+        .image-layer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            -webkit-transform:scale(1);
+            -ms-transform:scale(1);
+            transform:scale(1);
+            -webkit-transition: all 6000ms linear;
+            -moz-transition: all 6000ms linear;
+            -ms-transition: all 6000ms linear;
+            -o-transition: all 6000ms linear;
+            transition: all 6000ms linear;
+        }
+    }
+    .content-box {
+        position: relative;
+        display: block;
+        z-index: 5;
+        width: 100%;
+        max-width: 590px;
+        h2,
+        p,
+        .btn {
+            color: $white;
+            opacity: 0;
+            -webkit-transform: translateY(100px);
+            -moz-transform: translateY(100px);
+            -ms-transform: translateY(100px);
+            -o-transform: translateY(100px);
+            transform: translateY(100px);
+            -webkit-transition: all 700ms ease;
+            -moz-transition: all 700ms ease;
+            -ms-transition: all 700ms ease;
+            -o-transition: all 700ms ease;
+            transition: all 700ms ease;
+        } 
+        .breadcrumb-line {
+            color: $white;
+            opacity: 0;
+            -webkit-transform: translateY(50px);
+            -moz-transform: translateY(50px);
+            -ms-transform: translateY(50px);
+            -o-transform: translateY(50px);
+            transform: translateY(50px);
+            -webkit-transition: all 700ms ease;
+            -moz-transition: all 700ms ease;
+            -ms-transition: all 700ms ease;
+            -o-transition: all 700ms ease;
+            transition: all 700ms ease;
+        }
+        h2 {
+            font-size: 60px;
+            line-height: 1em;
+        }
+        .btn {
+            margin-top: 40px;
+            color: #333333;
+        }
+    }
+    .active {
+        .slide-item .image-layer{
+            -webkit-transform:scale(1.15);
+            -ms-transform:scale(1.15);
+            transform:scale(1.15);
+        }
+        .content-box {
+            h5 {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -o-transform: translateY(0);
+                transform: translateY(0);
+            }
+            h2,
+            p {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -o-transform: translateY(0);
+                transform: translateY(0);
+                -webkit-transition-delay: 500ms;
+                -moz-transition-delay: 500ms;
+                -ms-transition-delay: 500ms;
+                -o-transition-delay: 500ms;
+                transition-delay: 500ms;
+            }
+        }
+        .btn {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            -webkit-transition-delay: 100ms;
+            -moz-transition-delay: 100ms;
+            -ms-transition-delay: 100ms;
+            -o-transition-delay: 100ms;
+            transition-delay: 100ms;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .banner-carousel {
+        .slide-item {
+            height: 400px;
+            padding: 0 30px;
+        }
+        .content-box h2 {
+            font-size: 45px;
         }
     }
 }
