@@ -18,12 +18,41 @@
     <script src="assets/js/wow.js"></script>
     <script src="assets/js/owl.js"></script>
     <script src="assets/js/fontawesome-all.min.js"></script>
+    <script src="assets/js/scrollbar.js"></script>
     <!-- CSS Main -->
     <link href="assets/css/main.css" rel="stylesheet" />
     <!-- JS Main -->
     <script src="assets/js/script.js"></script>
 </head>
 <body>
+    <!-- search-popup -->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search"><span>Close</span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value=""
+                                placeholder="Search Here" required>
+                            <input type="submit" value="Search Now!">
+                        </fieldset>
+                    </div>
+                </form>
+                <h3>Recent Search Keywords</h3>
+                <ul class="recent-searches">
+                    <li><a href="#">Shampoo</a></li>
+                    <li><a href="#">Soap</a></li>
+                    <li><a href="#">Detergen</a></li>
+                    <li><a href="#">Mineral Water</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- search-popup end -->
+
+    <!-- main header -->
     <header class="main-header">
         <div class="header-top">
             <div class="container">
@@ -44,42 +73,103 @@
                 </div>
             </div>
         </div>
-        <div class="header-upper">
+        <div class="header-lower">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-4 col-sm-7">
-                        <a href="index.html" class="header-logo"><img src="assets/img/logo-header.svg" alt="image"></a>
+                <div class="outer-box clearfix">
+                    <div class="logo-box">
+                        <div class="logo"><a href="index.html"><img src="assets/img/logo-header.svg" alt=""></a>
+                        </div>
                     </div>
-                    <div class="col-md-8 col-sm-5">
-                        <div class="menu-area clearfix">
-                            <!--Mobile Navigation Toggler-->
-                            <div class="mobile-nav-toggler">
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
+                    <div class="menu-area clearfix">
+                        <nav class="main-menu navbar-expand-md navbar-light">
+                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix">
+                                    <li class="current">
+                                        <a href="#">VISION & MISSION</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">ABOUT</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#">PRODUCT</a>
+                                        <ul>
+                                            <li><a href="#">Product One</a></li>
+                                            <li><a href="#">Product Two</a></li>
+                                            <li><a href="#">Product Three</a></li>
+                                            <li><a href="#">Product Four</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">MARKET RANGE</a>
+                                    </li>
+                                    <li><a href="#">CONTACT US</a></li>
+                                </ul>
                             </div>
-                            <nav class="main-menu navbar-expand-md navbar-light">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">                          
-                                        <li><a href="#">VISION & MISSION</a></li>
-                                        <li><a href="#">ABOUT</a></li>
-                                        <li><a href="product.html">PRODUCT</a></li>
-                                        <li><a href="#">MARKET RANGE</a></li>
-                                        <li><a href="#">CONTACT US</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-                            <div class="menu-right-content clearfix">
+                        </nav>
+                        <div class="menu-right-content clearfix">
                             <div class="search-btn">
                                 <button type="button" class="search-toggler"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
+                        <!--Mobile Navigation Toggler-->
+                        <div class="mobile-nav-toggler">
+                            <i class="icon-bar"></i>
+                            <i class="icon-bar"></i>
+                            <i class="icon-bar"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+            <div class="container">
+                <div class="outer-box clearfix">
+                    <div class="logo-box">
+                        <div class="logo"><a href="index.html"><img src="assets/img/logo-header.svg" width="140"></a>
+                        </div>
+                    </div>
+                    <div class="menu-area">
+                        <nav class="main-menu clearfix">
+                            <!--Keep This Empty / Menu will come through Javascript-->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
+    <!-- main-header end -->
+
+    <!-- Mobile Menu  -->
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+
+        <nav class="menu-box">
+            <div class="nav-logo"><a href="#"><img src="assets/img/logo-header.svg" alt="" title=""></a>
+            </div>
+            <div class="menu-outer">
+                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
+            <div class="menu-second">
+                <ul class="list-unstyled">
+                    <li><a href="#">TOUR</a></li>
+                    <li><a href="career.html">CAREER</a></li>
+                    <li><a href="#">NEWS & EVENTS</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <ul class="clearfix">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div><!-- End Mobile Menu -->
+
+    <!-- section -->
     <section class="page-title">
         <div class="container">
             <h1>Products</h1>
@@ -295,5 +385,10 @@
             </div>
         </div>
     </footer>
+
+    <!--Scroll to top-->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <span class="fa fa-arrow-up"></span>
+    </button>
 </body>
 </html>

@@ -130,6 +130,12 @@ $(document).ready(function () {
 		});
 	}
 
+	if ($('#product_sidebar').length) {
+		$('.product-sidebar__list > li.dropdown .dropdown-toggle').on('click', function () {
+			$('.dropdown').toggleClass('open');
+			$('.dropdown').prev('.dropdown-sidebar').slideToggle(500);
+		});
+	}
 
 	//Side Nav Hide Show
 	if ($('.side-menu').length) {
