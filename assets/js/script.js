@@ -130,6 +130,8 @@ $(document).ready(function () {
 		});
 	}
 
+	// product sidebar
+
 	if ($('#product_sidebar').length) {
 		$('.product-sidebar__list > li.dropdown .dropdown-toggle').on('click', function () {
 			$('.dropdown').toggleClass('open');
@@ -137,6 +139,13 @@ $(document).ready(function () {
 		});
 	}
 
+	// button share toggle
+	if ($('.btn-share').length) {
+		$('.btn-share #share_click').on('click', function () {
+			$(this).parent().toggleClass('open');
+			$('.sosmed-list-dropdown').slideToggle(500);
+		});
+	}
 	//Side Nav Hide Show
 	if ($('.side-menu').length) {
 

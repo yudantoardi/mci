@@ -572,6 +572,8 @@ li {
   cursor: pointer;
   transition: 1s ease;
   border: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
 }
 
@@ -754,6 +756,8 @@ li {
   color: #222222;
   background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
   z-index: 5;
 }
@@ -918,6 +922,8 @@ li {
   border: 1px solid #FFFFFF;
   padding: 7px 15px;
   color: #FFFFFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -2277,10 +2283,14 @@ section.section-page {
 }
 
 .btn-share {
-  color: #000000;
-  display: inline-block;
-  margin-top: 20px;
+  margin: 20px 0;
   float: right;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.btn-share a {
+  color: #000000;
 }
 
 .btn-share svg {
@@ -2290,6 +2300,64 @@ section.section-page {
 
 .btn-share:hover {
   color: #F15D2A;
+}
+
+/* sosmed dropdown */
+.sosmed-list-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 10px 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #EEEEEF;
+  display: none;
+}
+
+.sosmed-list-dropdown::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #EEEEEF;
+  top: -9px;
+  right: 10px;
+}
+
+.sosmed-list-dropdown ul {
+  display: flex;
+  align-items: center;
+}
+
+.sosmed-list-dropdown ul a {
+  margin: 0 3px;
+  padding: 0 5px;
+  font-size: 20px;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sosmed-list-dropdown ul a svg {
+  margin: 0;
+  color: #000000;
+}
+
+.sosmed-list-dropdown ul a:hover svg {
+  color: #F15D2A;
+}
+
+.sosmed-list-dropdown ul li:last-child a {
+  margin-right: 0;
+}
+
+.sosmed-list-dropdown ul:first-child a {
+  margin-left: 0;
 }
 
 @media (max-width: 991px) {
@@ -2817,5 +2885,52 @@ section.section-page {
     background-size: 14px;
     width: 14px;
     height: 21px;
+  }
+}
+
+/*--- SECTION - Tour ---*/
+.sec-tour {
+  background-color: #212121;
+  color: #FFFFFF;
+}
+
+.sec-tour .tour-content {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sec-tour .tour-content iframe {
+  width: 100%;
+}
+
+.sec-tour .tour-content-desc {
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sec-tour .tour-content-desc h2 {
+  font-size: 45px;
+  position: relative;
+  display: block;
+  font-family: 'made_tommybold';
+  margin-bottom: 20px;
+  line-height: 1em;
+}
+
+.sec-tour .btn-share > a {
+  color: #FFFFFF;
+}
+
+.sec-tour .sosmed-list-dropdown {
+  background-color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  .sec-tour .tour-content iframe {
+    height: 300px;
+  }
+  .sec-tour .tour-content-desc h2 {
+    font-size: 32px;
   }
 }
